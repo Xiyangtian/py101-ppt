@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L5 分支结构 if / elif / else · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 5 课</div><div class="lesson-no">L5</div><h1>分支结构 if / elif / else</h1><p class="subtitle">让程序会『思考』——条件判断与嵌套</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>掌握 if/elif/else 语法，注意冒号和缩进</li><li>会写嵌套分支</li><li>会用 and/or 组合多条件</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>分支结构 if / elif / else</h2><p class="subtitle">让程序会『思考』——条件判断与嵌套</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>if —— 岔路口</h2><p class="subtitle">条件为真走 if 块，否则依次判断 elif，最后走 else。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>if 是岔路口，看条件决定走哪条路。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>score = <span class="num">85</span>
+<span class="key">if</span> score &gt;= <span class="num">90</span>:
+    <span class="fn">print</span>(<span class="str">"A"</span>)
+<span class="key">elif</span> score &gt;= <span class="num">80</span>:
+    <span class="fn">print</span>(<span class="str">"B"</span>)
+<span class="key">elif</span> score &gt;= <span class="num">70</span>:
+    <span class="fn">print</span>(<span class="str">"C"</span>)
+<span class="key">else</span>:
+    <span class="fn">print</span>(<span class="str">"再加油"</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>条件后必须有冒号 :，代码块必须缩进（4 空格或 1 Tab）。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>多条件 &amp; 嵌套</h2><p class="subtitle">用 and/or 组合，或用嵌套 if。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>条件往往是『比较』或『逻辑』的结果；路口里还能有小路口。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>age = <span class="num">15</span>
+gender = <span class="str">"男"</span>
+<span class="key">if</span> gender == <span class="str">"男"</span> <span class="key">and</span> age &lt; <span class="num">18</span>:
+    <span class="fn">print</span>(<span class="str">"男孩"</span>)
+<span class="key">elif</span> gender == <span class="str">"男"</span> <span class="key">and</span> age &gt;= <span class="num">18</span>:
+    <span class="fn">print</span>(<span class="str">"男人"</span>)
+<span class="key">elif</span> gender == <span class="str">"女"</span> <span class="key">and</span> age &lt; <span class="num">18</span>:
+    <span class="fn">print</span>(<span class="str">"女孩"</span>)
+<span class="key">else</span>:
+    <span class="fn">print</span>(<span class="str">"女人"</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>多条件用 and/or 连接，或拆成嵌套分支，两种写法都对。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>实例：出租车计费</h2><p class="subtitle">分段计价：一段一个价。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>从小到大分段判断，先判断近距离，别漏判。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>km = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"请输入距离(km): "</span>))
+<span class="key">if</span> km &lt;= <span class="num">3</span>:
+    cost = <span class="num">10</span>
+<span class="key">elif</span> km &lt;= <span class="num">16</span>:
+    cost = <span class="num">10</span> + (km - <span class="num">3</span>) * <span class="num">2.7</span>
+<span class="key">else</span>:
+    cost = <span class="num">10</span> + (<span class="num">16</span> - <span class="num">3</span>) * <span class="num">2.7</span> + (km - <span class="num">16</span>) * <span class="num">3</span>
+<span class="fn">print</span>(cost)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>验证：2→10；12→34.3；25→72.1。多分支要按顺序写，否则漏判。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>写成绩分级：≥90→A、80-89→B、70-79→C、60-69→D、&lt;60→E</li><li>写性别年龄称呼程序（男/女 + 成年/未成年）</li><li>出租车计费，分别输入 2、12、25 验证结果</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>if —— 岔路口</li><li>多条件 &amp; 嵌套</li><li>实例：出租车计费</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一节 L6</h3><ul><li>循环结构 while / for</li><li style="color:var(--muted);font-size:.92em;">让程序重复做——while、for、range、break/continue</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">8</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>

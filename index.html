@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCT Python 一级 · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+<style>
+html,body{overflow:auto;text-align:center;padding:0 6vw;}
+.wrap{max-width:1120px;margin:0 auto;padding:52px 0;}
+.hero h1{font-size:2.6em;font-weight:800;margin-bottom:8px;}
+.hero p{color:var(--muted);font-size:1.15em;margin-bottom:8px;}
+.keyhint{color:var(--muted);font-size:.95em;margin:20px auto 36px;background:#fff;border:1px solid var(--line);display:inline-block;padding:12px 22px;border-radius:20px;box-shadow:var(--shadow);line-height:1.9;}
+.keyhint b{color:var(--accent);}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;text-align:left;margin-bottom:34px;}
+.lesson{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:.25s;border-top:5px solid var(--c);display:flex;flex-direction:column;gap:8px;}
+.lesson:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(30,64,113,.18);}
+.lesson .tag{font-size:.8em;font-weight:800;color:var(--c);letter-spacing:.08em;}
+.lesson h2{font-size:1.15em;font-weight:800;}
+.lesson p{font-size:.9em;color:var(--muted);line-height:1.5;}
+.lesson .go{margin-top:auto;color:var(--c);font-weight:700;font-size:.95em;}
+@media(max-width:760px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="deck" style="position:static;height:auto;">
+<div class="wrap">
+<div class="hero">
+<h1>NCT Python 一级 · 课堂课件</h1>
+<p>像 PPT 一样：全屏、翻页播放，配合讲解使用</p>
+<p style="font-size:.95em;color:var(--muted);">共 9 课，每课按「目标 → 概念 → 练习 → 小结」播放</p>
+</div>
+<div class="keyhint">
+<b>演示操作：</b>按 <b>→</b> / <b>空格</b> 下一页，<b>←</b> 上一页，<b>Home/End</b> 首末页<br>
+<b>讲解方式：</b>每页左侧是关键词和一句比喻，右侧是<strong>程序块</strong>——由老师解读、点 ▶ Run 现场运行
+</div>
+<div class="grid"><a class="lesson" href="lesson-1.html" style="--c:#e74c3c;">
+<span class="tag">L1</span><h2>让电脑开口说话</h2><p>print、input、变量、IPO——第一步让电脑听懂你</p><span class="go">▶ 开始本课</span></a><a class="lesson" href="lesson-2.html" style="--c:#16a34a;">
+<span class="tag">L2</span><h2>变量与数据类型</h2><p>变量、命名、注释，以及四大基本类型</p><span class="go">▶ 开始本课</span></a><a class="lesson" href="lesson-3.html" style="--c:#8e44ad;">
+<span class="tag">L3</span><h2>运算符与表达式</h2><p>算术、比较、逻辑运算符与优先级</p><span class="go">▶ 开始本课</span></a><a class="lesson" href="lesson-4.html" style="--c:#2563eb;">
+<span class="tag">L4</span><h2>列表</h2><p>一组数据的容器——索引、切片、方法与排序</p><span class="go">▶ 开始本课</span></a><a class="lesson" href="lesson-5.html" style="--c:#d97706;">
+<span class="tag">L5</span><h2>分支结构 if / elif / else</h2><p>让程序会『思考』——条件判断与嵌套</p><span class="go">▶ 开始本课</span></a><a class="lesson" href="lesson-6.html" style="--c:#0f9f9a;">
+<span class="tag">L6</span><h2>循环结构 while / for</h2><p>让程序重复做——while、for、range、break/continue</p><span class="go">▶ 开始本课</span></a><a class="lesson" href="lesson-7.html" style="--c:#dc2626;">
+<span class="tag">L7</span><h2>字符串与列表的操作</h2><p>共有操作、split/join、字符串与列表互转</p><span class="go">▶ 开始本课</span></a><a class="lesson" href="lesson-8.html" style="--c:#7c3aed;">
+<span class="tag">L8</span><h2>函数与小海龟绘图</h2><p>def 复用代码，turtle 画出图形</p><span class="go">▶ 开始本课</span></a><a class="lesson" href="lesson-9.html" style="--c:#2563eb;">
+<span class="tag">L9</span><h2>异常处理 &amp; 真题实战</h2><p>try-except、eval，综合应对真题编程题</p><span class="go">▶ 开始本课</span></a></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L8 函数与小海龟绘图 · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 8 课</div><div class="lesson-no">L8</div><h1>函数与小海龟绘图</h1><p class="subtitle">def 复用代码，turtle 画出图形</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>掌握函数定义 def、参数、返回值 return</li><li>把重复代码封装成函数</li><li>会用 turtle 基本命令画线、转向、画正多边形</li><li>会用颜色填充与函数封装绘图</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>函数与小海龟绘图</h2><p class="subtitle">def 复用代码，turtle 画出图形</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>函数 —— 工具箱</h2><p class="subtitle">把一段能重复用的代码包起来起个名。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>函数像工具箱：把常用工具装进去，随取随用。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="key">def</span> add(a, b):
+    <span class="key">return</span> a + b
+
+result = add(<span class="num">3</span>, <span class="num">5</span>)
+<span class="fn">print</span>(result)   <span class="com"># 8</span>
+
+<span class="key">def</span> greet(name):
+    <span class="fn">print</span>(<span class="str">"你好,"</span>, name)
+
+greet(<span class="str">"小明"</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>def 函数名(参数): 函数体缩进；return 返回结果，没有 return 返回 None。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>参数与返回值</h2><p class="subtitle">参数是输入，返回值是算出的结果。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>参数是投进去的材料，return 是交回来的成品。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="key">def</span> avg(nums):
+    <span class="key">return</span> <span class="fn">sum</span>(nums) / <span class="fn">len</span>(nums)
+
+<span class="fn">print</span>(avg([<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>]))   <span class="com"># 2.5</span>
+
+<span class="key">def</span> divide_round(a, b):
+    <span class="key">if</span> b == <span class="num">0</span>:
+        <span class="key">return</span> <span class="str">"除数不能为0"</span>
+    <span class="key">return</span> <span class="fn">round</span>(a / b, <span class="num">2</span>)  <span class="com"># 保留两位小数</span>
+
+<span class="fn">print</span>(divide_round(<span class="num">10</span>, <span class="num">3</span>))  <span class="com"># 3.33</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>round(x,2) 四舍五入保留两位；函数里先用 if 处理边界。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>小海龟 · 基本命令</h2><p class="subtitle">turtle 像一支能拐弯的画笔。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>小海龟是画笔：前进、后退、转向、抬笔落笔。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="key">import</span> turtle <span class="key">as</span> t
+
+t.forward(<span class="num">100</span>)    <span class="com"># 前进</span>
+t.left(<span class="num">90</span>)       <span class="com"># 左转90度</span>
+t.pensize(<span class="num">5</span>)      <span class="com"># 画笔粗细</span>
+t.pencolor(<span class="str">"red"</span>) <span class="com"># 画笔颜色</span>
+t.penup()         <span class="com"># 抬笔（不画线）</span>
+t.pendown()       <span class="com"># 落笔</span>
+t.hideturtle()    <span class="com"># 隐藏小海龟</span>
+t.done()          <span class="com"># 保持窗口</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>常用命令：forward/backward、left/right、penup/pendown、pencolor/pensize、circle。end 别忘了 t.done()。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 04</div><h2>画正多边形</h2><p class="subtitle">正 n 边形：外角 = 360 / n。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>每次前进后转 360/n 度，走 n 次就回到原点。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="key">import</span> turtle <span class="key">as</span> t
+
+<span class="key">def</span> draw_polygon(n, length, color):
+    t.pencolor(color)
+    angle = <span class="num">360</span> / n
+    <span class="key">for</span> _ <span class="key">in</span> <span class="fn">range</span>(n):
+        t.forward(length)
+        t.left(angle)
+
+draw_polygon(<span class="num">3</span>, <span class="num">80</span>, <span class="str">"red"</span>)    <span class="com"># 正三角形</span>
+draw_polygon(<span class="num">4</span>, <span class="num">100</span>, <span class="str">"blue"</span>)  <span class="com"># 正方形</span>
+draw_polygon(<span class="num">6</span>, <span class="num">60</span>, <span class="str">"green"</span>)  <span class="com"># 正六边形</span>
+t.done()</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>关键：每次前进后转 360/n 度。n、length、color 参数让函数能画任意正多边形。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 05</div><h2>颜色填充</h2><p class="subtitle">begin_fill 开始，end_fill 填充。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>先告诉海龟『我要上色』，画完再『上色』。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="key">import</span> turtle <span class="key">as</span> t
+
+t.begin_fill()
+t.fillcolor(<span class="str">"red"</span>)
+<span class="key">for</span> _ <span class="key">in</span> <span class="fn">range</span>(<span class="num">4</span>):
+    t.forward(<span class="num">100</span>)
+    t.left(<span class="num">90</span>)
+t.end_fill()
+t.done()</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>begin_fill() 开始记录，画完封闭图形后 end_fill() 填充。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>写 def sum_range(n) 计算 0 到 n 的和（提示 sum(range(n+1))）</li><li>用 turtle 画边长 100 的正方形（函数封装）</li><li>用 draw_polygon 画正三角形、正六边形</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>函数 —— 工具箱</li><li>参数与返回值</li><li>小海龟 · 基本命令</li><li>画正多边形</li><li>颜色填充</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一节 L9</h3><ul><li>异常处理 &amp; 真题实战</li><li style="color:var(--muted);font-size:.92em;">try-except、eval，综合应对真题编程题</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">10</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>

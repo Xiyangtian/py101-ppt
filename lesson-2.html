@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L2 变量与数据类型 · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 2 课</div><div class="lesson-no">L2</div><h1>变量与数据类型</h1><p class="subtitle">变量、命名、注释，以及四大基本类型</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>理解变量，掌握命名规则与保留字</li><li>会用 单行# 和 多行三引号 注释</li><li>认识字符串/整数/浮点数/布尔四种类型</li><li>会用 str/int/float/bool 做类型转换</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>变量与数据类型</h2><p class="subtitle">变量、命名、注释，以及四大基本类型</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>变量 —— 电脑的碗</h2><p class="subtitle">变量像一个贴了标签的碗，用来存数据，通过名字访问。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>碗是一样的碗，贴的标签（变量名）不一样，装的东西也不一样。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>name = <span class="str">"小明"</span>     <span class="com"># 字符串</span>
+grade = <span class="num">13</span>        <span class="com"># 整数</span>
+tall = <span class="num">1.55</span>       <span class="com"># 浮点数</span>
+<span class="fn">print</span>(<span class="str">"我叫"</span>, name, <span class="str">"今年"</span>, grade, <span class="str">"岁"</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>= 是赋值，把右边数据存进左边变量。变量要先赋值再用。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>变量命名规则</h2><p class="subtitle">字母、数字、下划线；数字不能开头；不能用保留字。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>名字要像路牌：别人看得懂、不撞名、不打头阵用数字。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="com"># 合法：</span>
+my_name = <span class="str">"Tom"</span>
+_score2 = <span class="num">90</span>
+
+<span class="com"># 非法：</span>
+<span class="com"># 1name = 5   数字开头 ❌</span>
+<span class="com"># if = 5      保留字 ❌</span>
+<span class="com"># my-name = 5 含短横线 ❌</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>不能用保留字（if、while、True、False等）做变量名；区分大小写。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>注释 —— 给代码写说明</h2><p class="subtitle">注释不会被执行，只给人看。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b># 是单行便签；三个引号是整段便签。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="com"># 这是单行注释（用 # 开头）</span>
+<span class="fn">print</span>(<span class="str">"你好"</span>)   <span class="com"># 行尾也可以</span>
+
+<span class="str">"""
+这是多行注释
+用三个双引号或单引号包围
+"""</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>考试常考：单行注释用 #，多行用三引号。双引号是字符串，不是注释。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 04</div><h2>四大基本数据类型</h2><p class="subtitle">字符串、整数、浮点数、布尔。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>文字要引号、数字分两种（带不带小数点）、真假是开关、空心是 None。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>s = <span class="str">"Hello"</span>      <span class="com"># 字符串 str</span>
+n = <span class="num">42</span>           <span class="com"># 整数 int</span>
+f = <span class="num">3.14</span>         <span class="com"># 浮点数 float</span>
+b = <span class="key">True</span>         <span class="com"># 布尔 bool（True/False）</span>
+none = <span class="key">None</span>      <span class="com"># 无值</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>字符串可 + 拼接、\n 换行；用 type(x) 查看类型。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 05</div><h2>类型转换 —— 翻译官</h2><p class="subtitle">在字符串、整数、浮点数、布尔之间互相转换。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>str/int/float/bool 是四个翻译官，把一种类型翻译成另一种。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>age = <span class="num">14</span>
+<span class="fn">print</span>(<span class="str">"你今年"</span> + <span class="fn">str</span>(age) + <span class="str">"岁"</span>)
+
+a = <span class="fn">int</span>(<span class="str">"123"</span>)       <span class="com"># 字符串→整数</span>
+b = <span class="fn">float</span>(<span class="num">4</span>)         <span class="com"># 整数→浮点数 4.0</span>
+<span class="fn">print</span>(<span class="fn">int</span>(<span class="num">3.6</span>))      <span class="com"># 3（截断，不是四舍五入）</span>
+<span class="fn">print</span>(<span class="fn">bool</span>(<span class="num">0</span>))       <span class="com"># False</span>
+<span class="fn">print</span>(<span class="fn">bool</span>(<span class="str">" "</span>))     <span class="com"># True（含空格的字符串为真）</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>int("3.5") 会报错，需先 float() 再 int()；float→int 是截断。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>写个人信息录入：输入姓名、年龄、身高，按格式输出（用 str/int/float）</li><li>口答：下面哪些是合法变量名？my_name、1name、if、_x、2/3、my-name</li><li>写出结果：int(3.6)、float(3)、bool(0)、bool(" ")</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>变量 —— 电脑的碗</li><li>变量命名规则</li><li>注释 —— 给代码写说明</li><li>四大基本数据类型</li><li>类型转换 —— 翻译官</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一节 L3</h3><ul><li>运算符与表达式</li><li style="color:var(--muted);font-size:.92em;">算术、比较、逻辑运算符与优先级</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">10</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>

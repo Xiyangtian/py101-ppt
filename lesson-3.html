@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L3 运算符与表达式 · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 3 课</div><div class="lesson-no">L3</div><h1>运算符与表达式</h1><p class="subtitle">算术、比较、逻辑运算符与优先级</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>会用 + - * / % // ** 做算术</li><li>会用 == != &gt; &lt; &gt;= &lt;= 比较，返回 True/False</li><li>会用 not and or 组合条件</li><li>掌握优先级与结合性</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>运算符与表达式</h2><p class="subtitle">算术、比较、逻辑运算符与优先级</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>算术运算符</h2><p class="subtitle">做数学运算，返回数值。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>数学课老朋友，新认识 // （整除）和 % （取余）。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="fn">print</span>(<span class="num">5</span> + <span class="num">3</span>)     <span class="com"># 8</span>
+<span class="fn">print</span>(<span class="num">5</span> / <span class="num">3</span>)     <span class="com"># 1.6666...（除法是浮点数）</span>
+<span class="fn">print</span>(<span class="num">5</span> % <span class="num">3</span>)     <span class="com"># 2（取余）</span>
+<span class="fn">print</span>(<span class="num">5</span> ** <span class="num">3</span>)    <span class="com"># 125（幂）</span>
+<span class="fn">print</span>(<span class="num">7</span> // <span class="num">2</span>)    <span class="com"># 3（整除向下）</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>% 常用来判断奇偶/整除；/ 结果一定是浮点数。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>比较运算符</h2><p class="subtitle">比较两值，返回布尔 True/False。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>只回答『是/否』的问题：是否相等、谁大谁小。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="fn">print</span>(<span class="num">5</span> == <span class="num">3</span>)   <span class="com"># False（等于）</span>
+<span class="fn">print</span>(<span class="num">5</span> != <span class="num">3</span>)   <span class="com"># True（不等于）</span>
+<span class="fn">print</span>(<span class="num">5</span> &gt; <span class="num">3</span>)    <span class="com"># True</span>
+<span class="fn">print</span>(<span class="num">5</span> &gt;= <span class="num">5</span>)   <span class="com"># True</span>
+<span class="fn">print</span>(<span class="num">3</span> &lt;= <span class="num">1</span>)   <span class="com"># False</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>= 赋值，== 比较。3 == "3" 结果是 False（类型不同）。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>逻辑运算符</h2><p class="subtitle">组合多个条件，常用于 if。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>and 要都对、or 有一个对就对、not 反过来。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="fn">print</span>(<span class="key">not</span> <span class="key">True</span>)          <span class="com"># False</span>
+<span class="fn">print</span>(<span class="key">True</span> <span class="key">and</span> <span class="key">False</span>)   <span class="com"># False</span>
+<span class="fn">print</span>(<span class="key">True</span> <span class="key">or</span> <span class="key">False</span>)    <span class="com"># True</span>
+
+<span class="com"># 短路：and 左假不再算右边；or 左真不再算右边</span>
+<span class="fn">print</span>(<span class="key">False</span> <span class="key">and</span> (<span class="num">1</span>/<span class="num">0</span>))  <span class="com"># 不报错，右边没执行</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>短路特性常考：False and 后面写什么都没关系，不会执行。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 04</div><h2>优先级</h2><p class="subtitle">从高到低：括号 &gt; 幂 &gt; 乘除 &gt; 加减 &gt; 比较 &gt; 逻辑。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>拿不准就加括号，最保险也最好读。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="fn">print</span>(<span class="num">2</span> + <span class="num">3</span> * <span class="num">4</span>)      <span class="com"># 14：先乘后加</span>
+<span class="fn">print</span>((<span class="num">2</span> + <span class="num">3</span>) * <span class="num">4</span>)    <span class="com"># 20：括号优先</span>
+<span class="fn">print</span>(<span class="num">2</span> ** <span class="num">3</span> ** <span class="num">2</span>)    <span class="com"># 512：幂是右结合</span>
+<span class="fn">print</span>(<span class="num">8</span> - <span class="num">3</span> + <span class="num">2</span>)      <span class="com"># 7：左结合</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>算术左结合、幂右结合；把不确定的用括号包起来。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>求值：5%2、10//3、7**2、2+3*4、(2+3)*4</li><li>求值：int(15/6 + 3.3)（提示：15/6=2.5，2.5+3.3=5.8，int(5.8)=5）</li><li>写程序：输入一个整数判断是否为偶数（用 % 和 ==）</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>算术运算符</li><li>比较运算符</li><li>逻辑运算符</li><li>优先级</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一节 L4</h3><ul><li>列表</li><li style="color:var(--muted);font-size:.92em;">一组数据的容器——索引、切片、方法与排序</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">9</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>

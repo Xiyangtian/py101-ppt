@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L6 循环结构 while / for · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 6 课</div><div class="lesson-no">L6</div><h1>循环结构 while / for</h1><p class="subtitle">让程序重复做——while、for、range、break/continue</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>会用 while 循环，理解 while True + break</li><li>会用 for 遍历，用 range() 生成序列</li><li>掌握 break（结束）与 continue（跳过）</li><li>会写嵌套循环：直角三角形、九九乘法表</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>循环结构 while / for</h2><p class="subtitle">让程序重复做——while、for、range、break/continue</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>while —— 一直做</h2><p class="subtitle">条件为真就一直循环，直到条件变假。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>只要『条件还成立』，就一直重复；记得让条件能变假，否则死循环。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>n = <span class="num">0</span>
+<span class="key">while</span> n &lt; <span class="num">5</span>:
+    <span class="fn">print</span>(<span class="str">"第"</span>, n, <span class="str">"次"</span>)
+    n = n + <span class="num">1</span>    <span class="com"># 别忘了让 n 变化</span>
+
+<span class="com"># 密码验证</span>
+<span class="key">while</span> <span class="fn">input</span>(<span class="str">"请输入密码: "</span>) != <span class="str">"cubicbird"</span>:
+    <span class="fn">print</span>(<span class="str">"密码错误"</span>)
+<span class="fn">print</span>(<span class="str">"密码正确"</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>循环体里一定要有让条件最终变假的语句，否则死循环。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>for + range</h2><p class="subtitle">for 挨个取出元素；range 生成一串整数。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>for 像点名：按顺序一个一个叫出来。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="key">for</span> fruit <span class="key">in</span> [<span class="str">"apple"</span>, <span class="str">"banana"</span>, <span class="str">"cherry"</span>]:
+    <span class="fn">print</span>(fruit)
+
+<span class="key">for</span> i <span class="key">in</span> <span class="fn">range</span>(<span class="num">5</span>):        <span class="com"># 0,1,2,3,4</span>
+    <span class="fn">print</span>(i)
+
+<span class="key">for</span> i <span class="key">in</span> <span class="fn">range</span>(<span class="num">2</span>, <span class="num">9</span>, <span class="num">3</span>):  <span class="com"># 2,5,8（不含9，步长3）</span>
+    <span class="fn">print</span>(i)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>range(start,stop,step) 左闭右开，不含 stop；range(n) 默认 0 起、步长 1。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>break 与 continue</h2><p class="subtitle">break 结束整个循环；continue 跳过本次。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>break 是大结局，continue 是插队跳过这一轮。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="com"># break：到 3 就停</span>
+<span class="key">for</span> i <span class="key">in</span> <span class="fn">range</span>(<span class="num">10</span>):
+    <span class="key">if</span> i == <span class="num">3</span>:
+        <span class="key">break</span>
+    <span class="fn">print</span>(i)   <span class="com"># 0 1 2</span>
+
+<span class="com"># continue：跳过 3 的倍数</span>
+<span class="key">for</span> i <span class="key">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">7</span>):
+    <span class="key">if</span> i % <span class="num">3</span> == <span class="num">0</span>:
+        <span class="key">continue</span>
+    <span class="fn">print</span>(i)   <span class="com"># 1 2 4 5</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>口诀：break 结束整个循环，continue 跳过本次进入下一次。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 04</div><h2>循环嵌套</h2><p class="subtitle">循环里再套循环。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>外层管『行』，内层管『列』。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="com"># 直角三角形</span>
+n = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"输入行数: "</span>))
+<span class="key">for</span> i <span class="key">in</span> <span class="fn">range</span>(<span class="num">1</span>, n + <span class="num">1</span>):
+    <span class="fn">print</span>(<span class="str">"*"</span> * i)
+
+<span class="com"># 九九乘法表</span>
+<span class="key">for</span> i <span class="key">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">10</span>):
+    <span class="key">for</span> j <span class="key">in</span> <span class="fn">range</span>(<span class="num">1</span>, i + <span class="num">1</span>):
+        <span class="fn">print</span>(f<span class="str">"{j}*{i}={j*i}"</span>, end=<span class="str">" "</span>)
+    <span class="fn">print</span>()</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>end="" 让输出不换行；外层控制行、内层控制列。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 05</div><h2>累加求和</h2><p class="subtitle">循环 + 累加器，最常用套路。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>先准备一个空碗 total，一次次往里加。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>total = <span class="num">0</span>
+<span class="key">for</span> i <span class="key">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">101</span>):
+    total += i
+<span class="fn">print</span>(total)   <span class="com"># 5050</span>
+
+total = <span class="num">0</span>
+<span class="key">for</span> num <span class="key">in</span> <span class="fn">range</span>(<span class="num">200</span>, <span class="num">501</span>):
+    total += num
+<span class="fn">print</span>(total)   <span class="com"># 105350</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>累加器 total 循环前要初始化为 0；range 不含结束值。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>求和：200+201+…+499+500</li><li>输出 0~100 里不能被 19 整除的数并求总和</li><li>输入行数打印直角三角形</li><li>打印 9×9 乘法表</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>while —— 一直做</li><li>for + range</li><li>break 与 continue</li><li>循环嵌套</li><li>累加求和</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一节 L7</h3><ul><li>字符串与列表的操作</li><li style="color:var(--muted);font-size:.92em;">共有操作、split/join、字符串与列表互转</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">10</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>

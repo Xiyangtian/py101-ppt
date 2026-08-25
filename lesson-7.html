@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L7 字符串与列表的操作 · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 7 课</div><div class="lesson-no">L7</div><h1>字符串与列表的操作</h1><p class="subtitle">共有操作、split/join、字符串与列表互转</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>掌握字符串与列表共有操作：+ * 切片 in for</li><li>掌握字符串特有操作：split() join() strip()，翻转用切片</li><li>掌握列表特有操作：reverse() remove()</li><li>会在字符串与列表间转换</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>字符串与列表的操作</h2><p class="subtitle">共有操作、split/join、字符串与列表互转</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>共有操作</h2><p class="subtitle">字符串和列表很多操作是一样的。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>都一样能：+ 拼、* 复制、切片、用 in 问在不在。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>s = <span class="str">"帅气的方块鸟"</span>
+lst = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>]
+<span class="fn">print</span>(s + <span class="str">"老师们"</span>)   <span class="com"># 字符串拼接</span>
+<span class="fn">print</span>(lst + [<span class="num">4</span>, <span class="num">5</span>])   <span class="com"># 列表拼接</span>
+<span class="fn">print</span>(<span class="str">"红"</span> * <span class="num">3</span>)         <span class="com"># 红红红</span>
+<span class="fn">print</span>(<span class="num">2</span> <span class="key">in</span> lst)        <span class="com"># True</span>
+<span class="fn">print</span>(<span class="str">"块"</span> <span class="key">in</span> s)       <span class="com"># True</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>拼接/重复生成新对象，原数组不变；in 做成员判断。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>字符串属性</h2><p class="subtitle">字符串不可变，但有很多方法。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>字符串是『不能改』的，只能靠方法或切片得到新字符串。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>s = <span class="str">"a,b,c"</span>
+<span class="fn">print</span>(s.split(<span class="str">","</span>))       <span class="com"># ["a","b","c"]（拆成列表）</span>
+<span class="fn">print</span>(<span class="str">"-"</span>.join([<span class="str">"a"</span>,<span class="str">"b"</span>]))  <span class="com"># "a-b"（拼回字符串）</span>
+<span class="fn">print</span>(<span class="str">"  abc  "</span>.strip())     <span class="com"># "abc"（去空格）</span>
+<span class="fn">print</span>(<span class="str">"方块鸟"</span>[::-<span class="num">1</span>])        <span class="com"># 鸟块方（翻转用切片）</span>
+<span class="com"># "方块鸟"[0]="x"  # 报错！字符串不可改</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>split() 字符串→列表；join() 列表→字符串，方向相反要记牢。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>列表属性</h2><p class="subtitle">列表可变，方法就地修改。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>列表是『可变』的，能直接改、能就地排序反转。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>lst = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>]
+lst.reverse()    <span class="com"># 就地反转</span>
+<span class="fn">print</span>(lst)       <span class="com"># [5,4,3,2,1]</span>
+lst.append(<span class="num">6</span>)
+lst.insert(<span class="num">0</span>, <span class="num">0</span>)
+lst.remove(<span class="num">5</span>)    <span class="com"># 删第一个出现的 5</span>
+<span class="fn">print</span>(lst)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>remove(x) 删第一个匹配值；列表没有值会报错。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 04</div><h2>字符串 ↔ 列表</h2><p class="subtitle">处理文本和数据组时经常互转。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>split 把一句话拆成一份份；join 把一份份拼回一句话。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>s = <span class="str">"1-2,3-4,5-6"</span>
+<span class="fn">print</span>(<span class="fn">list</span>(s))          <span class="com"># 逐字符拆</span>
+<span class="fn">print</span>(s.split(<span class="str">","</span>))     <span class="com"># ["1-2","3-4","5-6"]</span>
+<span class="fn">print</span>(s.split(<span class="str">"-"</span>))     <span class="com"># ["1","2,3","4,5","6"]</span>
+
+lst = [<span class="str">"我有"</span>, <span class="str">"1只"</span>, <span class="str">"小毛驴"</span>]
+<span class="fn">print</span>(<span class="str">""</span>.join(lst))     <span class="com"># 我有1只小毛驴</span>
+<span class="fn">print</span>(<span class="str">"_"</span>.join(lst))    <span class="com"># 我有_1只_小毛驴</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>列表里若有数字，join 前要先 map(str, 列表) 转字符串。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 05</div><h2>处理数字字符串</h2><p class="subtitle">拆、转、排序、拼。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>先 split 拆开，再 map(int) 变数字，sort 排序，join 拼回去。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>s = <span class="str">"2*4*5*1*27*3*9"</span>
+nums = s.split(<span class="str">"*"</span>)
+nums = <span class="fn">list</span>(<span class="fn">map</span>(int, nums))
+<span class="fn">print</span>(<span class="fn">max</span>(nums), <span class="fn">min</span>(nums))   <span class="com"># 27 1</span>
+nums.sort()
+<span class="fn">print</span>(<span class="str">"-"</span>.join(<span class="fn">map</span>(str, nums)))  <span class="com"># 1-2-3-4-5-9-27</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>map(int, 列表) 转整数，map(str, 列表) 转字符串。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>s="帅气的方块鸟老师们"，用切片取出『方块鸟』（提示 s[3:-3]）</li><li>写出 s="1-2,3-4,5-6" 用 split(",")、split("-") 的结果</li><li>把 ["我有","1只","小毛驴"] 用 join 拼成一句话</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>共有操作</li><li>字符串属性</li><li>列表属性</li><li>字符串 ↔ 列表</li><li>处理数字字符串</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一节 L8</h3><ul><li>函数与小海龟绘图</li><li style="color:var(--muted);font-size:.92em;">def 复用代码，turtle 画出图形</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">10</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>

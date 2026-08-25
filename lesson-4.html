@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L4 列表 · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 4 课</div><div class="lesson-no">L4</div><h1>列表</h1><p class="subtitle">一组数据的容器——索引、切片、方法与排序</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>会用 [] 创建列表、索引访问、负索引</li><li>会用 append/insert/pop/del 增删改</li><li>会切片 lst[start:end:step]（左闭右开）</li><li>会用 len/max/min/sum/sort/reverse 等</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>列表</h2><p class="subtitle">一组数据的容器——索引、切片、方法与排序</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>创建列表与访问</h2><p class="subtitle">用 [] 装一组数据，元素用逗号隔开。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>列表像一排带编号的储物格，编号从 0 开始数。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>numbers = [<span class="num">1</span>, <span class="num">1</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">7</span>, <span class="num">11</span>]
+animals = [<span class="str">"dog"</span>, <span class="str">"pig"</span>, <span class="str">"cat"</span>, <span class="str">"bird"</span>]
+<span class="fn">print</span>(<span class="fn">len</span>(numbers))   <span class="com"># 6（长度）</span>
+<span class="fn">print</span>(numbers[<span class="num">0</span>])     <span class="com"># 1（第一个，索引从 0 起）</span>
+<span class="fn">print</span>(numbers[-<span class="num">1</span>])    <span class="com"># 11（最后一个，负索引 -1 起）</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>正索引从 0 起，负索引从 -1 起；len() 返回元素个数。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>增删改</h2><p class="subtitle">列表是可变的，能直接增、删、改。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>append 往后塞、insert 插队、pop 拿走并告诉你拿了啥。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>animals = [<span class="str">"dog"</span>, <span class="str">"pig"</span>, <span class="str">"cat"</span>, <span class="str">"bird"</span>]
+animals[<span class="num">0</span>] = <span class="str">"mouse"</span>     <span class="com"># 改第一个</span>
+animals.append(<span class="str">"duck"</span>)    <span class="com"># 末尾追加</span>
+animals.insert(<span class="num">1</span>, <span class="str">"cow"</span>)  <span class="com"># 在索引1处插入</span>
+<span class="key">del</span> animals[<span class="num">2</span>]            <span class="com"># 删除索引2</span>
+popped = animals.pop()    <span class="com"># 删最后一个并返回</span>
+<span class="fn">print</span>(animals)
+<span class="fn">print</span>(popped)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>del 不返回值；pop() 返回被删除的元素（默认删最后一个）。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>切片</h2><p class="subtitle">取一段：list[start:end:step]。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>切蛋糕：从 start 切到 end 前面一块（左闭右开）。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>lst = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>]
+<span class="fn">print</span>(lst[<span class="num">2</span>:<span class="num">5</span>])     <span class="com"># [3,4,5]（含2不含5）</span>
+<span class="fn">print</span>(lst[:<span class="num">4</span>])      <span class="com"># [1,2,3,4]</span>
+<span class="fn">print</span>(lst[<span class="num">3</span>:])      <span class="com"># [4,5,6]</span>
+<span class="fn">print</span>(lst[::-<span class="num">1</span>])    <span class="com"># 反转</span>
+<span class="fn">print</span>(lst[::<span class="num">2</span>])     <span class="com"># 步长2：隔一个取</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>左闭右开：冒号左边含、右边不含。这是最容易错的地方。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 04</div><h2>常用函数与方法</h2><p class="subtitle">统计、排序、查找一网打尽。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>len/max/min/sum 一键统计；count 数个数；sort 排序。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>nums = [<span class="num">2</span>, <span class="num">5</span>, <span class="num">6</span>, <span class="num">7</span>, <span class="num">8</span>, <span class="num">9</span>, <span class="num">2</span>, <span class="num">9</span>, <span class="num">9</span>]
+<span class="fn">print</span>(<span class="fn">max</span>(nums))        <span class="com"># 9</span>
+<span class="fn">print</span>(<span class="fn">min</span>(nums))        <span class="com"># 2</span>
+<span class="fn">print</span>(<span class="fn">sum</span>(nums))        <span class="com"># 57</span>
+<span class="fn">print</span>(nums.count(<span class="num">9</span>))    <span class="com"># 3</span>
+nums.sort()             <span class="com"># 原地升序</span>
+<span class="fn">print</span>(nums)
+nums.sort(reverse=<span class="key">True</span>) <span class="com"># 原地降序</span>
+<span class="fn">print</span>(nums)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>sort()/reverse() 原地修改，返回 None；不会返回新列表。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 05</div><h2>+ * in</h2><p class="subtitle">拼接、重复、成员判断。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>+ 拼在一起、* 复制几份、in 问『在不在』。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>a = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>]
+b = [<span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>]
+<span class="fn">print</span>(a + b)     <span class="com"># [1,2,3,4,5,6]（新列表）</span>
+<span class="fn">print</span>(a * <span class="num">2</span>)     <span class="com"># [1,2,3,1,2,3]</span>
+<span class="fn">print</span>(<span class="num">2</span> <span class="key">in</span> a)    <span class="com"># True</span>
+<span class="fn">print</span>(<span class="num">9</span> <span class="key">in</span> a)    <span class="com"># False</span></code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>+ 和 * 生成新列表、不改原列表；in 常配合 if 使用。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>创建 Num=[2,1,9,4,7,11]，输出长度、最大、最小、总和、平均分</li><li>对 Num 升序排序→反转→打印</li><li>用切片取出 Num 的第 2 到第 4 个元素（左闭右开）</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>创建列表与访问</li><li>增删改</li><li>切片</li><li>常用函数与方法</li><li>+ * in</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一节 L5</h3><ul><li>分支结构 if / elif / else</li><li style="color:var(--muted);font-size:.92em;">让程序会『思考』——条件判断与嵌套</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">10</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L1 让电脑开口说话 · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 1 课</div><div class="lesson-no">L1</div><h1>让电脑开口说话</h1><p class="subtitle">print、input、变量、IPO——第一步让电脑听懂你</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>知道 Python 是什么，理解解释型/编译型语言的区别</li><li>写出第一个程序：print() 输出</li><li>理解 IPO 模型：输入→处理→输出</li><li>认识变量与基本数据类型</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>让电脑开口说话</h2><p class="subtitle">print、input、变量、IPO——第一步让电脑听懂你</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>Python 是什么？</h2><p class="subtitle">Python 是一门编程语言，是计算机能读懂的语言。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>Python 像一门『普通话』，你写一行，电脑就照着做一行。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="com"># 输出一句话到屏幕</span>
+<span class="fn">print</span>(<span class="str">"Hello World"</span>)
+
+<span class="com"># 也可以输出算好的结果</span>
+<span class="fn">print</span>(<span class="num">1</span> + <span class="num">2</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>print() 就是把内容显示到屏幕的指令。Python 是解释型：一句一句边解释边执行。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>print —— 电脑的大喇叭</h2><p class="subtitle">print() 把括号里的内容打印到屏幕上。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>print = 电脑拿大喇叭喊话，喊的内容要加引号告诉电脑『这是文字』。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="com"># 第一个程序</span>
+<span class="fn">print</span>(<span class="str">"Hello World"</span>)
+<span class="fn">print</span>(<span class="num">1</span> + <span class="num">2</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>print 里放字符串要加引号；放数字直接写。中文输出也不难。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>input —— 电脑的耳朵</h2><p class="subtitle">input() 接收键盘输入；得到的一定是字符串。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>input 是耳朵，print 是嘴巴。电脑等你说完再回应。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code>name = <span class="fn">input</span>(<span class="str">"请输入你的名字: "</span>)
+<span class="fn">print</span>(<span class="str">"你好, "</span> + name)
+
+a = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"请输入一个整数: "</span>))
+<span class="fn">print</span>(<span class="str">"你输入的数是"</span>, a)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>input() 返回字符串，要当数字算得先用 int()/float() 转。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 04</div><h2>IPO —— 程序的骨架</h2><p class="subtitle">I 输入 → P 处理 → O 输出。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>写程序先想三件事：要什么输入、怎么处理、要什么输出。</span></div></div><div class="right"><div class="panel"><div class="label">程序流程</div><div class="code"><pre><code>I nput (输入)   ──►   P rocessing (加工)   ──►   O utput (输出)
+   input()                运算 / 判断 / 循环             print()</code></pre></div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 05</div><h2>变量 &amp; 冯·诺依曼</h2><p class="subtitle">变量是装数据的容器；了解电脑的经典结构。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>变量 = 贴上名字标签的碗；电脑 = 输入→存储→运算→控制→输出。</span></div></div><div class="right"><div class="panel"><div class="label">结构</div><ul class="structure"><li><span class="root">冯·诺依曼体系结构</span> <span class="note">存储程序 + 五大部件</span></li><li><span class="child">├── 输入设备</span> <span class="note">键盘鼠标</span></li><li><span class="child">├── 存储器</span> <span class="note">存程序和数据</span></li><li><span class="child">├── 运算器</span> <span class="note">做运算</span></li><li><span class="child">├── 控制器</span> <span class="note">指挥</span></li><li><span class="child">└── 输出设备</span> <span class="note">显示器</span></li></ul></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>在 online-python.com 敲：print("My name is Python")，Run 看输出</li><li>再敲一行 print(输入你的名字)，Run 一次看看</li><li>把第 1 行换成你自己的英文名字，再 Run，输出变了吗？</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>Python 是什么？</li><li>print —— 电脑的大喇叭</li><li>input —— 电脑的耳朵</li><li>IPO —— 程序的骨架</li><li>变量 &amp; 冯·诺依曼</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一节 L2</h3><ul><li>变量与数据类型</li><li style="color:var(--muted);font-size:.92em;">变量、命名、注释，以及四大基本类型</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">10</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L9 异常处理 &amp; 真题实战 · 课堂PPT</title>
+<link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide"><div class="hero"><div class="hero-badge">NCT Python 一级 · 第 9 课</div><div class="lesson-no">L9</div><h1>异常处理 &amp; 真题实战</h1><p class="subtitle">try-except、eval，综合应对真题编程题</p><div class="hero-cta" onclick="nextSlide()">▶ 开始本课</div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Agenda · 目标</div><h2>📋 今天我们要学什么</h2><p class="subtitle">学完这节课，你会——</p></div><div class="right"><div class="panel"><ol style="font-size:1.12em;line-height:2.1;padding-left:24px;"><li>会用 try-except 处理输入异常</li><li>会用 eval() 把字符串当表达式计算</li><li>能综合运用 IPO、分支、循环、列表应对真题编程题</li></ol></div></div></div></section>
+<section class="slide part-slide"><div class="part-inside"><div class="part-tag">开始本课</div><h2>异常处理 &amp; 真题实战</h2><p class="subtitle">try-except、eval，综合应对真题编程题</p></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 01</div><h2>try-except —— 护身符</h2><p class="subtitle">可能出错的地方用 try 包起来，出错走 except。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>把可能出错的地方『护起来』，出错也不让程序崩溃。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="key">try</span>:
+    a = <span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"请输入数值: "</span>))
+    <span class="fn">print</span>(<span class="str">"你输入的是"</span>, a)
+<span class="key">except</span>:
+    <span class="fn">print</span>(<span class="str">"输入有误，请重新输入"</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>输入『好的』时 float() 会报错，被 except 捕获，提示重输而不是崩溃。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 02</div><h2>循环到输入正确</h2><p class="subtitle">while True + try-except，直到输入合法。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>直到学生做对为止——不停问，问对了才放行。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="key">while</span> <span class="key">True</span>:
+    <span class="key">try</span>:
+        x = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"请输入一个整数: "</span>))
+        <span class="fn">print</span>(x)
+        <span class="key">break</span>
+    <span class="key">except</span>:
+        <span class="fn">print</span>(<span class="str">"输入的不是整数，请重试"</span>)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>输入非法就 except，循环继续；输入合法就 break 结束。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 03</div><h2>eval —— 当算式算</h2><p class="subtitle">把字符串当作表达式执行并返回结果。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>eval 把字符串『当算式』算出来，一行顶一堆代码。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="fn">print</span>(<span class="fn">eval</span>(<span class="str">"2 + 3"</span>))      <span class="com"># 5</span>
+<span class="fn">print</span>(<span class="fn">eval</span>(<span class="str">"3 * 4"</span>))       <span class="com"># 12</span>
+expr = <span class="fn">input</span>(<span class="str">"输入算式: "</span>)
+<span class="fn">print</span>(<span class="str">"结果:"</span>, <span class="fn">eval</span>(expr))</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>考试中了解它会计算字符串表达式即可。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">概念 · 04</div><h2>真题编程题</h2><p class="subtitle">读题→拆解→写码→跑通。</p><div class="metaphor"><span class="icon">💡</span><span><b>比喻：</b>操作题拿分关键是『能跑通』，先看清输入/输出格式再动手。</span></div></div><div class="right"><div class="panel"><div class="label">示例代码 · 点 ▶ Run 试运行</div><div class="code"><div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">demo.py</span></div><pre><code><span class="com"># ① 两数之差与和</span>
+a = <span class="fn">int</span>(<span class="fn">input</span>()); b = <span class="fn">int</span>(<span class="fn">input</span>())
+<span class="fn">print</span>(<span class="fn">abs</span>(a - b)); <span class="fn">print</span>(a + b)
+
+<span class="com"># ② 评委平均分</span>
+s = <span class="fn">input</span>(); nums = <span class="fn">list</span>(<span class="fn">map</span>(int, s.split()))
+<span class="fn">print</span>(<span class="fn">round</span>(<span class="fn">sum</span>(nums)/<span class="fn">len</span>(nums)))
+
+<span class="com"># ③ 最小公倍数</span>
+a,b = <span class="fn">int</span>(<span class="fn">input</span>()), <span class="fn">int</span>(<span class="fn">input</span>())
+gcd = <span class="fn">max</span>(i <span class="key">for</span> i <span class="key">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="fn">min</span>(a,b)+<span class="num">1</span>) <span class="key">if</span> a%i==<span class="num">0</span> <span class="key">and</span> b%i==<span class="num">0</span>)
+<span class="fn">print</span>(a*b//gcd)</code></pre><div class="code-actions"><a class="run-btn" href="https://www.online-python.com/" target="_blank" rel="noopener">▶ Run</a><button class="copy-btn" type="button">📋 Copy</button></div></div><div class="keypoint"><b>💡 关键点：</b>① abs 差值；② split+map+round；③ 两数之积 ÷ 最大公约数。</div></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Practice · 动手</div><h2>✏️ 随堂练习</h2><p class="subtitle">动手敲一敲，比看十遍都强。</p></div><div class="right"><div class="panel practice"><div class="label">任务清单</div><ol><li>写 try-except 程序：反复输入整数直到合法</li><li>用 eval 计算用户输入的一个表达式（如 2*3+4）</li><li>用真题三道操作题练手（见 06-真题与拓展）</li></ol></div></div></div></section>
+<section class="slide"><div class="split"><div class="left"><div class="kicker">Recap · 小结</div><h2>📌 今天学了什么？</h2><p class="subtitle">对照一下，都掌握了吗？</p></div><div class="right"><div class="grid2"><div class="card" style="border-left:5px solid var(--green);"><h3 style="color:var(--green);">已掌握</h3><ul><li>try-except —— 护身符</li><li>循环到输入正确</li><li>eval —— 当算式算</li><li>真题编程题</li></ul></div><div class="card" style="border-left:5px solid var(--teal);"><h3 style="color:var(--teal);">下一步</h3><ul><li>做真题 & 考前复习</li></ul></div></div><div class="takeaway"><span class="label">💬 给学生的话</span>看完 PPT 不如自己敲一遍。<strong>敲错的 Bug 比看会的代码更值钱。</strong></div></div></div></section>
+</div>
+<div class="nav">
+<a class="home" href="index.html">📚 目录</a>
+<button id="prev" type="button">← 上页</button>
+<span class="counter"><span id="cur">1</span> / <span id="total">9</span></span>
+<div class="progress-track"><span id="bar"></span></div>
+<button id="next" type="button">下页 →</button>
+</div>
+<script src="ppt.js"></script>
+</body>
+</html>
